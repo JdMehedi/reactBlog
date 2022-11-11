@@ -16,5 +16,36 @@
             }else{
                 classCheckBox.prop('checked',false)
             }
+            
     }
+
+    function checkSinglePermission(groupClassName, groupID, countTotalPermission) {
+            const classCheckbox = $('.'+groupClassName+ ' input');
+            const groupIDCheckBox = $("#"+groupID);
+            console.log(classCheckbox.length);
+            console.log("group",countTotalPermission);
+            // if there is any occurance where something is not selected then make selected = false
+            if($('.'+groupClassName+ ' input:checked').length == countTotalPermission){
+                groupIDCheckBox.prop('checked', true);
+            }else{
+                groupIDCheckBox.prop('checked', false);
+            }
+         }
+
+    // function implementAllChecked(){
+    //     const countPermissions={{count($permissions)}};
+    //     const countPermissionGroups={{count($permissionGroups)}};
+
+    //     //    console.log((countPermissions + countPermissionGroups));
+    //     //    console.log($(' input[type="checkbox"]:checked').length);
+
+    //     if($(' input[type="checkbox"]:checked').length >= (countPermissions + countPermissionGroups)){
+    //     $("#checkPermissionAll").prop('checked',true);
+
+    //     }else{
+    //     $("#checkPermissionAll").prop('checked',false);
+
+    //     }
+
+    // }
 </script>

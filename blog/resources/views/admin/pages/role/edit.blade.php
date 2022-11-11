@@ -68,7 +68,7 @@ Edit Role - admin panel
                                
                                         @foreach ($permissions as $permission)
                                         <div class="form-check">
-                                            <input type="checkbox" name="permissions[]" {{ $role->hasPermissionTo($permission->name) ? 'checked': ''}} class="form-check-input" id="exampleCheck{{$permission->id}}" value="{{$permission->name}}">
+                                            <input type="checkbox" name="permissions[]" {{ $role->hasPermissionTo($permission->name) ? 'checked': ''}} class="form-check-input" id="exampleCheck{{$permission->id}}" value="{{$permission->name}}" onclick="checkSinglePermission('role-{{$i}}-checkbox','{{$i}}Management',{{ count($permissions)}})">
                                             <label class="form-check-label" for="exampleCheck{{$permission->id}}">{{$permission->name}}</label>
                                         </div>
                                         @php $j++; @endphp 
